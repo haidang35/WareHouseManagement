@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="controller.addproduct.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="nameProductTxt" layoutX="60.0" layoutY="78.0" prefHeight="42.0" prefWidth="242.0" promptText="Name Product">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Text fill="#0087d9" layoutX="232.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new product" wrappingWidth="192.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="categoryTxt" layoutX="60.0" layoutY="143.0" prefHeight="42.0" prefWidth="242.0" promptText="Category">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="quantityTxt" layoutX="60.0" layoutY="209.0" prefHeight="42.0" prefWidth="242.0" promptText="Quantity">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="staffTxt" layoutX="328.0" layoutY="78.0" prefHeight="42.0" prefWidth="242.0" promptText="Staff's Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button onAction="#confirmAddProduct" layoutX="328.0" layoutY="209.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="242.0" text="Confirm" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="unitPriceTxt" layoutX="58.0" layoutY="274.0" prefHeight="42.0" prefWidth="242.0" promptText="Unit Price">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="phoneNumberTxt" layoutX="328.0" layoutY="143.0" prefHeight="42.0" prefWidth="242.0" promptText="Phone Number">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button onAction="#backToStock" layoutX="20.0" layoutY="18.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="&lt; Back" textFill="#127bb9">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

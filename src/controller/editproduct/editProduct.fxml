@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="controller.editproduct.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="productNameTxt" layoutX="158.0" layoutY="60.0" prefHeight="48.0" prefWidth="284.0" promptText="Product Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="categoryTxt" layoutX="158.0" layoutY="125.0" prefHeight="48.0" prefWidth="284.0" promptText="Category">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="quantityTxt" layoutX="158.0" layoutY="190.0" prefHeight="48.0" prefWidth="284.0" promptText="Quantity">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="unitPriceTxt" layoutX="158.0" layoutY="256.0" prefHeight="48.0" prefWidth="284.0" promptText="Unit Price">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button onAction="#confirmEditProduct" layoutX="158.0" layoutY="322.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="284.0" text="Confirm" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button onAction="#backToStock" layoutX="27.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="&lt; Back">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

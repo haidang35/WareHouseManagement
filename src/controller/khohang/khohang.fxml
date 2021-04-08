@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.khohang.Controller">
+   <children>
+      <TableView fx:id="productsTable" layoutX="17.0" layoutY="52.0" prefHeight="330.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="idView" prefWidth="66.0" text="id" />
+          <TableColumn fx:id="nameView" prefWidth="146.0" text="Name" />
+            <TableColumn fx:id="categoryView" minWidth="0.0" prefWidth="120.0" text="Category" />
+            <TableColumn fx:id="quantityView" prefWidth="98.0" text="Quantity" />
+            <TableColumn fx:id="unitPriceView" prefWidth="136.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="30.0" prefWidth="76.0" text="&lt; Back" textFill="#096390">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="333.0" layoutY="14.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="30.0" prefWidth="76.0" text="Add" textFill="#139a09">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="420.0" layoutY="14.0" mnemonicParsing="false" onAction="#editProduct" prefHeight="30.0" prefWidth="76.0" text="Edit" textFill="#096390">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="508.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="30.0" prefWidth="76.0" text="Delete" textFill="#dd0d0d">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="249.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Export" textFill="#e39512">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
