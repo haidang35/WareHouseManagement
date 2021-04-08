@@ -36,7 +36,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="249.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Export" textFill="#e39512">
+      <Button onAction="#exportProduct" layoutX="249.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Export" textFill="#e39512">
          <font>
             <Font size="14.0" />
          </font>

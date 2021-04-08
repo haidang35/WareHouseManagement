@@ -1,5 +1,6 @@
 package controller.khohang;
 
+import com.sun.org.apache.bcel.internal.generic.ATHROW;
 import controller.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,9 +49,9 @@ public class Controller implements Initializable {
         Main.mainStage.show();
     }
     public void onAddProduct() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../addproduct/addnewproduct.fxml"));
-        Main.mainStage.setTitle("Add new product");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Parent root = FXMLLoader.load(getClass().getResource("../importproduct/importproduct.fxml"));
+        Main.mainStage.setTitle("Import product");
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
     public void editProduct() throws Exception{
@@ -67,14 +68,23 @@ public class Controller implements Initializable {
             productSelected = productsTable.getSelectionModel().getSelectedItem();
             ProductAccessObject pao = new ProductAccessObject();
             if(pao.deleteProduct(productSelected)){
-                Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
-                Main.mainStage.setTitle("Kho hàng");
-                Main.mainStage.setScene(new Scene(root,600, 400));
-                Main.mainStage.show();
                 System.out.println("Delete product success");
             }else{
                 System.out.println("Delete product failed");
             }
+            Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
+            Main.mainStage.setTitle("Kho hàng");
+            Main.mainStage.setScene(new Scene(root,600, 400));
+            Main.mainStage.show();
+        }
+    }
+    public void exportProduct() throws Exception{
+        if(productsTable.getSelectionModel().getSelectedItems().size() > 0){
+            productSelected = productsTable.getSelectionModel().getSelectedItem();
+            Parent root= FXMLLoader.load(getClass().getResource("../editexportproduct/editexportproduct.fxml"));
+            Main.mainStage.setTitle("Export product");
+            Main.mainStage.setScene(new Scene(root,600, 450));
+            Main.mainStage.show();
         }
     }
 }
