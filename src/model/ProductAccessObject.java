@@ -4,6 +4,7 @@ import controller.khohang.Controller;
 import database.Connector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.entity.ExportProduct;
 import model.entity.Product;
 
 import java.sql.ResultSet;
@@ -63,6 +64,27 @@ public class ProductAccessObject implements DataAccessObject<Product> {
         try{
             Connector c = Connector.getInstance();
             String txt_sql = "delete from management where id = "+product.getId()+"";
+            c.getStatement().execute(txt_sql);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+    public boolean exportProduct(Product product){
+        try {
+            Connector c = Connector.getInstance();
+            String txt_sql = "delete from management where name = '"+product.getName()+"'";
+            c.getStatement().execute(txt_sql);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+    public boolean updateQuantityProduct(Product product){
+        try {
+            Connector c = Connector.getInstance();
+            String txt_sql = " update management set quantity = "+product.getQuantity()+" " +
+                    "where name = '"+product.getName()+"'";
             c.getStatement().execute(txt_sql);
         }catch (Exception e){
             return false;

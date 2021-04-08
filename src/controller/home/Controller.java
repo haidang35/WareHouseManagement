@@ -19,8 +19,11 @@ public class Controller {
         Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
-    public void onExportProduct(){
-
+    public void onExportProduct() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../exportproduct/exportproduct.fxml"));
+        Main.mainStage.setTitle("Export Products");
+        Main.mainStage.setScene(new Scene(root, 750, 500));
+        Main.mainStage.show();
     }
 
 }

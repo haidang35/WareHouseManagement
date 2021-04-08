@@ -1,6 +1,5 @@
 package controller.khohang;
 
-import com.sun.org.apache.bcel.internal.generic.ATHROW;
 import controller.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -81,7 +80,7 @@ public class Controller implements Initializable {
     public void exportProduct() throws Exception{
         if(productsTable.getSelectionModel().getSelectedItems().size() > 0){
             productSelected = productsTable.getSelectionModel().getSelectedItem();
-            Parent root= FXMLLoader.load(getClass().getResource("../editexportproduct/editexportproduct.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("../addexportproduct/editexportproduct.fxml"));
             Main.mainStage.setTitle("Export product");
             Main.mainStage.setScene(new Scene(root,600, 450));
             Main.mainStage.show();
