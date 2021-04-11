@@ -52,7 +52,8 @@ public class ExportProductAccessObject implements DataAccessObject<ExportProduct
         try {
             Connector c = Connector.getInstance();
             String txt_sql = "update exportproduct set productname = '"+exportProduct.getProductName()+"', category = '"+exportProduct.getCategory()+"', " +
-                    "quantity = "+exportProduct.getQuantity()+", unitprice = "+exportProduct.getUnitPrice()+", staff = '"+exportProduct.getStaff()+"', phonenumber = '"+exportProduct.getPhoneNumber()+"', date = '"+exportProduct.getDate()+"'  ";
+                    "quantity = "+exportProduct.getQuantity()+", unitprice = "+exportProduct.getUnitPrice()+", staff = '"+exportProduct.getStaff()+"', phonenumber = '"+exportProduct.getPhoneNumber()+"', date = '"+exportProduct.getDate()+"' " +
+                    "where id = "+exportProduct.getId()+" ";
             c.getStatement().execute(txt_sql);
         }catch (Exception e){
             return false;
@@ -82,4 +83,5 @@ public class ExportProductAccessObject implements DataAccessObject<ExportProduct
         }
         return true;
     }
+
 }

@@ -1,12 +1,5 @@
 package database;
 
-import controller.Main;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-
-import java.net.ConnectException;
-import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

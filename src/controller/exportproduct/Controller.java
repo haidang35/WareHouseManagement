@@ -51,13 +51,13 @@ public class Controller implements Initializable {
     public void backToBefore() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../home/home.fxml"));
         Main.mainStage.setTitle("Home");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
     public void addExportProduct() throws Exception{
         Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
         Main.mainStage.setTitle("Kho hàng");
-        Main.mainStage.setScene(new Scene(root,600, 400));
+        Main.mainStage.setScene(new Scene(root,750, 500));
         Main.mainStage.show();
     }
     public void exportProduct() throws Exception{
@@ -90,7 +90,7 @@ public class Controller implements Initializable {
         if(exportProductTable.getSelectionModel().getSelectedItems().size() > 0){
             exportProductSelected = exportProductTable.getSelectionModel().getSelectedItem();
             ExportProductAccessObject epao = new ExportProductAccessObject();
-            Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.quantity;
+            Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.getQuantity() + controller.editexportproduct.Controller.quantityAfterEdit;
             Product prod = new Product(null, exportProductSelected.getProductName(), exportProductSelected.getCategory(), quantityProductExport, exportProductSelected.getUnitPrice());
             ProductAccessObject pao = new ProductAccessObject();
             if(epao.deleteProduct(exportProductSelected) && pao.updateQuantityProduct(prod)){
@@ -103,5 +103,15 @@ public class Controller implements Initializable {
                 System.out.println("Delete export product failed");
             }
         }
+    }
+    public void editExportProduct() throws Exception{
+        if(exportProductTable.getSelectionModel().getSelectedItems().size() > 0){
+            exportProductSelected = exportProductTable.getSelectionModel().getSelectedItem();
+            Parent root = FXMLLoader.load(getClass().getResource("../editexportproduct/editexportproduct.fxml"));
+            Main.mainStage.setTitle("Export Products");
+            Main.mainStage.setScene(new Scene(root, 750, 500));
+            Main.mainStage.show();
+        }
+
     }
 }

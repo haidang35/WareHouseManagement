@@ -44,7 +44,7 @@ public class Controller implements Initializable {
     public void backToHome() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../home/home.fxml"));
         Main.mainStage.setTitle("Home");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
     public void onAddProduct() throws Exception{
@@ -58,7 +58,7 @@ public class Controller implements Initializable {
             productSelected = productsTable.getSelectionModel().getSelectedItem();
             Parent root = FXMLLoader.load(getClass().getResource("../editproduct/editproduct.fxml"));
             Main.mainStage.setTitle("Edit product");
-            Main.mainStage.setScene(new Scene(root, 600, 400));
+            Main.mainStage.setScene(new Scene(root, 750, 500));
             Main.mainStage.show();
         }
     }
@@ -73,7 +73,7 @@ public class Controller implements Initializable {
             }
             Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
             Main.mainStage.setTitle("Kho hàng");
-            Main.mainStage.setScene(new Scene(root,600, 400));
+            Main.mainStage.setScene(new Scene(root,750, 500));
             Main.mainStage.show();
         }
     }
@@ -82,7 +82,7 @@ public class Controller implements Initializable {
             productSelected = productsTable.getSelectionModel().getSelectedItem();
             Parent root= FXMLLoader.load(getClass().getResource("../addexportproduct/editexportproduct.fxml"));
             Main.mainStage.setTitle("Export product");
-            Main.mainStage.setScene(new Scene(root,600, 450));
+            Main.mainStage.setScene(new Scene(root,750, 500));
             Main.mainStage.show();
         }
     }

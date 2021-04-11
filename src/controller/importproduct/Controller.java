@@ -1,7 +1,6 @@
 package controller.importproduct;
 
 import controller.Main;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -52,16 +51,7 @@ public class Controller implements Initializable {
     public void addToStock() throws Exception{
         if(importProductTable.getSelectionModel().getSelectedItems().size() > 0){
             importProductSelected = importProductTable.getSelectionModel().getSelectedItem();
-            Product productSelected = new Product(null, importProductSelected.getProductName(), importProductSelected.getCategory(), importProductSelected.getQuantity(), importProductSelected.getUnitPrice());
-            ProductAccessObject pao = new ProductAccessObject();
-            if(pao.addProduct(productSelected)){
-                System.out.println("Add product to stock success");
-            }else{
-                System.out.println("Add product to stock failed");
-            }
-            ImportProductAccessObject ipao = new ImportProductAccessObject();
-            ipao.deleteProduct(importProductSelected);
-            Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("../choosequantityimport/choosequantity.fxml"));
             Main.mainStage.setTitle("Kho hàng");
             Main.mainStage.setScene(new Scene(root,600, 400));
             Main.mainStage.show();
@@ -70,13 +60,13 @@ public class Controller implements Initializable {
     public void importProduct() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../addproduct/addnewproduct.fxml"));
         Main.mainStage.setTitle("Add new product");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
     public void backToHome() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../home/home.fxml"));
         Main.mainStage.setTitle("Home");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
     public void editImportProduct() throws Exception{

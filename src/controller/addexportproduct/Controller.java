@@ -40,7 +40,7 @@ public class Controller implements Initializable {
         LocalDate ld = LocalDate.now();
         Date dateNow = java.sql.Date.valueOf(ld);
         ExportProduct ep = new ExportProduct(id, productName, category, quantity, unitPrice, staffName, phoneNumber, dateNow);
-        if(quantity <= controller.khohang.Controller.productSelected.getQuantity()){
+        if(quantity <= controller.khohang.Controller.productSelected.getQuantity() && quantity>0){
             quantityAfterExport = controller.khohang.Controller.productSelected.getQuantity() - quantity;
             ExportProductAccessObject epao = new ExportProductAccessObject();
             Product prod = new Product(id, productName, category, quantityAfterExport, unitPrice );
@@ -61,7 +61,7 @@ public class Controller implements Initializable {
     public void backToBefore() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../home/home.fxml"));
         Main.mainStage.setTitle("Home");
-        Main.mainStage.setScene(new Scene(root, 600, 400));
+        Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
 }

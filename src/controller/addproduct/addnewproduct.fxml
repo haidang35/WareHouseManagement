@@ -1,56 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="controller.addproduct.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addproduct.Controller">
    <children>
-      <TextField fx:id="nameProductTxt" layoutX="60.0" layoutY="78.0" prefHeight="42.0" prefWidth="242.0" promptText="Name Product">
+      <TextField fx:id="nameProductTxt" layoutX="403.0" layoutY="118.0" prefHeight="59.0" prefWidth="254.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fill="#0087d9" layoutX="232.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new product" wrappingWidth="192.13671875">
+      <Text fill="#0087d9" layoutX="244.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new product" textAlignment="CENTER" wrappingWidth="261.13671875">
          <font>
-            <Font size="20.0" />
+            <Font size="29.0" />
          </font>
       </Text>
-      <TextField fx:id="categoryTxt" layoutX="60.0" layoutY="143.0" prefHeight="42.0" prefWidth="242.0" promptText="Category">
+      <TextField fx:id="categoryTxt" layoutX="60.0" layoutY="324.0" prefHeight="59.0" prefWidth="261.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="quantityTxt" layoutX="60.0" layoutY="209.0" prefHeight="42.0" prefWidth="242.0" promptText="Quantity">
+      <TextField fx:id="quantityTxt" layoutX="403.0" layoutY="221.0" prefHeight="59.0" prefWidth="261.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="staffTxt" layoutX="328.0" layoutY="78.0" prefHeight="42.0" prefWidth="242.0" promptText="Staff's Name">
+      <TextField fx:id="staffTxt" layoutX="60.0" layoutY="118.0" prefHeight="59.0" prefWidth="254.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button onAction="#confirmAddProduct" layoutX="328.0" layoutY="209.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="242.0" text="Confirm" textFill="RED">
+      <Button layoutX="286.0" layoutY="410.0" mnemonicParsing="false" onAction="#confirmAddProduct" prefHeight="59.0" prefWidth="162.0" text="Confirm" textFill="RED">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="unitPriceTxt" layoutX="58.0" layoutY="274.0" prefHeight="42.0" prefWidth="242.0" promptText="Unit Price">
+      <TextField fx:id="unitPriceTxt" layoutX="403.0" layoutY="324.0" prefHeight="59.0" prefWidth="261.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="phoneNumberTxt" layoutX="328.0" layoutY="143.0" prefHeight="42.0" prefWidth="242.0" promptText="Phone Number">
+      <TextField fx:id="phoneNumberTxt" layoutX="60.0" layoutY="221.0" prefHeight="59.0" prefWidth="254.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button onAction="#backToStock" layoutX="20.0" layoutY="18.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="&lt; Back" textFill="#127bb9">
+      <Button layoutX="58.0" layoutY="21.0" mnemonicParsing="false" onAction="#backToStock" prefHeight="42.0" prefWidth="88.0" text="&lt; Back" textFill="#127bb9">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
+      <Text layoutX="60.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff name: " wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number: " wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="403.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product name:" wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="60.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="403.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity product:" wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="403.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit price:" wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

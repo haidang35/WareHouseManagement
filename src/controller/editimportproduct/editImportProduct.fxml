@@ -5,53 +5,92 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="controller.editimportproduct.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.editimportproduct.Controller">
    <children>
-      <Button onAction="#backToBefore" layoutX="71.0" layoutY="30.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" text="&lt; Back">
+      <Button layoutX="71.0" layoutY="30.0" mnemonicParsing="false" onAction="#backToBefore" prefHeight="36.0" prefWidth="80.0" text="&lt; Back">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="productNameTxt" layoutX="71.0" layoutY="98.0" prefHeight="47.0" prefWidth="278.0" promptText="Product Name">
+      <TextField fx:id="productNameTxt" layoutX="71.0" layoutY="113.0" prefHeight="57.0" prefWidth="278.0" promptText="Product Name">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="categoryTxt" layoutX="71.0" layoutY="175.0" prefHeight="47.0" prefWidth="278.0" promptText="Category">
+      <TextField fx:id="categoryTxt" layoutX="71.0" layoutY="206.0" prefHeight="57.0" prefWidth="278.0" promptText="Category">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="quantityTxt" layoutX="71.0" layoutY="250.0" prefHeight="47.0" prefWidth="278.0" promptText="Quantity">
+      <TextField fx:id="quantityTxt" layoutX="71.0" layoutY="301.0" prefHeight="57.0" prefWidth="278.0" promptText="Quantity">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="unitPriceTxt" layoutX="71.0" layoutY="318.0" prefHeight="47.0" prefWidth="278.0" promptText="Unit Price">
+      <TextField fx:id="unitPriceTxt" layoutX="71.0" layoutY="390.0" prefHeight="57.0" prefWidth="278.0" promptText="Unit Price">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="staffTxt" layoutX="406.0" layoutY="98.0" prefHeight="47.0" prefWidth="278.0" promptText="Staff">
+      <TextField fx:id="staffTxt" layoutX="406.0" layoutY="113.0" prefHeight="57.0" prefWidth="278.0" promptText="Staff">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="phoneNumberTxt" layoutX="406.0" layoutY="175.0" prefHeight="47.0" prefWidth="278.0" promptText="Phone Number">
+      <TextField fx:id="phoneNumberTxt" layoutX="406.0" layoutY="204.0" prefHeight="57.0" prefWidth="278.0" promptText="Phone Number">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="dateTxt" layoutX="406.0" layoutY="250.0" prefHeight="47.0" prefWidth="278.0" promptText="Date">
+      <TextField fx:id="dateTxt" layoutX="406.0" layoutY="299.0" prefHeight="57.0" prefWidth="278.0" promptText="Date">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button onAction="#confirmEditImportProduct" layoutX="406.0" layoutY="318.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="278.0" text="Confirm" textFill="RED">
+      <Button layoutX="406.0" layoutY="390.0" mnemonicParsing="false" onAction="#confirmEditImportProduct" prefHeight="57.0" prefWidth="278.0" text="Confirm" textFill="RED">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <Text fill="#138aa8" layoutX="245.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit import product" textAlignment="CENTER" wrappingWidth="322.13671875">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product name: " wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity: " wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit price:" wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="406.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff name:" wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="406.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:" wrappingWidth="144.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="406.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date import product:" wrappingWidth="177.13671875">
+         <font>
+            <Font name="System Italic" size="19.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

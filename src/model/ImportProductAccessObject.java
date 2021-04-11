@@ -74,4 +74,15 @@ public class ImportProductAccessObject implements DataAccessObject<ImportProduct
         }
        return true;
     }
+    public boolean updateQuantityProduct(ImportProduct importProduct){
+        try {
+            Connector c = Connector.getInstance();
+            String txt_sql = "update addnewproduct set Quantity = "+importProduct.getQuantity()+" " +
+                    "where id = "+importProduct.getId()+"";
+            c.getStatement().execute(txt_sql);
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
 }

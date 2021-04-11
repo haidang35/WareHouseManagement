@@ -5,11 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import model.ImportProductAccessObject;
-import model.ProductAccessObject;
 import model.entity.ImportProduct;
-import model.entity.Product;
 
 import java.time.LocalDate;
 import java.util.Date;

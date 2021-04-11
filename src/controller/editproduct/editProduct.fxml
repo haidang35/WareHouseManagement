@@ -5,38 +5,62 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="controller.editproduct.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.editproduct.Controller">
    <children>
-      <TextField fx:id="productNameTxt" layoutX="158.0" layoutY="60.0" prefHeight="48.0" prefWidth="284.0" promptText="Product Name">
+      <TextField fx:id="productNameTxt" layoutX="66.0" layoutY="136.0" prefHeight="62.0" prefWidth="276.0" promptText="Product Name">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="categoryTxt" layoutX="158.0" layoutY="125.0" prefHeight="48.0" prefWidth="284.0" promptText="Category">
+      <TextField fx:id="categoryTxt" layoutX="66.0" layoutY="247.0" prefHeight="62.0" prefWidth="276.0" promptText="Category">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="quantityTxt" layoutX="158.0" layoutY="190.0" prefHeight="48.0" prefWidth="284.0" promptText="Quantity">
+      <TextField fx:id="quantityTxt" layoutX="401.0" layoutY="136.0" prefHeight="62.0" prefWidth="276.0" promptText="Quantity">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="unitPriceTxt" layoutX="158.0" layoutY="256.0" prefHeight="48.0" prefWidth="284.0" promptText="Unit Price">
+      <TextField fx:id="unitPriceTxt" layoutX="401.0" layoutY="251.0" prefHeight="62.0" prefWidth="276.0" promptText="Unit Price">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button onAction="#confirmEditProduct" layoutX="158.0" layoutY="322.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="284.0" text="Confirm" textFill="RED">
+      <Button layoutX="244.0" layoutY="357.0" mnemonicParsing="false" onAction="#confirmEditProduct" prefHeight="62.0" prefWidth="249.0" text="Confirm" textFill="RED">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button onAction="#backToStock" layoutX="27.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="&lt; Back">
+      <Button layoutX="66.0" layoutY="36.0" mnemonicParsing="false" onAction="#backToStock" prefHeight="42.0" prefWidth="83.0" text="&lt; Back">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
+      <Text fill="#2a709e" layoutX="268.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit product" textAlignment="CENTER" wrappingWidth="201.13671875">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product name:" wrappingWidth="164.13671875">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" wrappingWidth="164.13671875">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="401.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" wrappingWidth="164.13671875">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="401.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit price:" wrappingWidth="164.13671875">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
