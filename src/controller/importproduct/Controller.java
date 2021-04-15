@@ -8,12 +8,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.HistoryAccessObject;
 import model.ImportProductAccessObject;
 import model.ProductAccessObject;
+import model.entity.History;
 import model.entity.ImportProduct;
 import model.entity.Product;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -51,10 +55,27 @@ public class Controller implements Initializable {
     public void addToStock() throws Exception{
         if(importProductTable.getSelectionModel().getSelectedItems().size() > 0){
             importProductSelected = importProductTable.getSelectionModel().getSelectedItem();
+            LocalDate ld = LocalDate.now();
+            Date dateImport = java.sql.Date.valueOf(ld);
+
+                String productImport = importProductSelected.getProductName();
+                String category = importProductSelected.getCategory();
+                Integer quantity = importProductSelected.getQuantity();
+                String staffImport = importProductSelected.getStaff();
+                String phoneNumber = importProductSelected.getPhoneNumber();
+                History his = new History(null,"Import", productImport, category, quantity, staffImport, phoneNumber, dateImport);
+                HistoryAccessObject hao = new HistoryAccessObject();
+                if(hao.addProduct(his)){
+                    System.out.println("Add import product to history success");
+                }else{
+                    System.out.println("Add import product to history failed");
+                }
+
             Parent root= FXMLLoader.load(getClass().getResource("../choosequantityimport/choosequantity.fxml"));
             Main.mainStage.setTitle("Kho hàng");
             Main.mainStage.setScene(new Scene(root,600, 400));
             Main.mainStage.show();
+
         }
     }
     public void importProduct() throws Exception{

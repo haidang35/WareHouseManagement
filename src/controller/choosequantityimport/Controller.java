@@ -82,7 +82,7 @@ public class Controller implements Initializable {
                 System.out.println("Add product to stock success");
                 Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
                 Main.mainStage.setTitle("Kho hàng");
-                Main.mainStage.setScene(new Scene(root,600, 400));
+                Main.mainStage.setScene(new Scene(root,750, 500));
                 Main.mainStage.show();
             }else{
                 System.out.println("Add product to stock failed");

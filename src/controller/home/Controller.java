@@ -25,5 +25,11 @@ public class Controller {
         Main.mainStage.setScene(new Scene(root, 750, 500));
         Main.mainStage.show();
     }
+    public void onHistory() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
+        Main.mainStage.setTitle("History");
+        Main.mainStage.setScene(new Scene(root, 750, 500));
+        Main.mainStage.show();
+    }
 
 }

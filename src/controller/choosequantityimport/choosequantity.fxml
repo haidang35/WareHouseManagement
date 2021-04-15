@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="controller.choosequantityimport.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="119.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn số lượng sản phẩm cần nhập" textAlignment="CENTER" wrappingWidth="361.13671875">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="quantityProductTxt" layoutX="202.0" layoutY="161.0" prefHeight="51.0" prefWidth="172.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button onAction="#backToBefore" layoutX="41.0" layoutY="28.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="76.0" text="&lt; Back">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button onAction="#confirmImportProduct" layoutX="236.0" layoutY="225.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="104.0" text="Confirm">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Text fill="RED" layoutX="119.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng phải ít hơn hoặc bằng số lượng hiện có" textAlignment="CENTER" wrappingWidth="361.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

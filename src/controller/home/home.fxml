@@ -42,7 +42,7 @@
          <font>
             <Font name="System Bold" size="34.0" />
          </font></Text>
-      <Button layoutX="292.0" layoutY="362.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="152.0" text="History" textFill="#636e80">
+      <Button onAction="#onHistory" layoutX="292.0" layoutY="362.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="152.0" text="History" textFill="#636e80">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>

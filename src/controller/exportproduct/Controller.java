@@ -9,12 +9,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.ExportProductAccessObject;
+import model.HistoryAccessObject;
 import model.ProductAccessObject;
 import model.entity.ExportProduct;
+import model.entity.History;
 import model.entity.Product;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -75,6 +79,20 @@ public class Controller implements Initializable {
                     Main.mainStage.setScene(new Scene(root, 750, 500));
                     Main.mainStage.show();
                 }
+                String productImport = exportProductSelected.getProductName();
+                String category = exportProductSelected.getCategory();
+                Integer quantity = exportProductSelected.getQuantity();
+                String staffImport = exportProductSelected.getStaff();
+                String phoneNumber = exportProductSelected.getPhoneNumber();
+                LocalDate ld = LocalDate.now();
+                Date dateExport = java.sql.Date.valueOf(ld);
+                History his = new History(null,"Export", productImport, category, quantity, staffImport, phoneNumber, dateExport);
+                HistoryAccessObject hao = new HistoryAccessObject();
+                if(hao.addProduct(his)){
+                    System.out.println("Add import product to history success");
+                }else{
+                    System.out.println("Add import product to history failed");
+                }
                 System.out.println("Export product success");
                 Parent root = FXMLLoader.load(getClass().getResource("exportproduct.fxml"));
                 Main.mainStage.setTitle("Export product");
@@ -90,18 +108,24 @@ public class Controller implements Initializable {
         if(exportProductTable.getSelectionModel().getSelectedItems().size() > 0){
             exportProductSelected = exportProductTable.getSelectionModel().getSelectedItem();
             ExportProductAccessObject epao = new ExportProductAccessObject();
-            Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.getQuantity() + controller.editexportproduct.Controller.quantityAfterEdit;
-            Product prod = new Product(null, exportProductSelected.getProductName(), exportProductSelected.getCategory(), quantityProductExport, exportProductSelected.getUnitPrice());
-            ProductAccessObject pao = new ProductAccessObject();
-            if(epao.deleteProduct(exportProductSelected) && pao.updateQuantityProduct(prod)){
-                System.out.println("Delete export product success");
-                Parent root = FXMLLoader.load(getClass().getResource("../exportproduct/exportproduct.fxml"));
-                Main.mainStage.setTitle("Export Products");
-                Main.mainStage.setScene(new Scene(root, 750, 500));
-                Main.mainStage.show();
-            }else{
-                System.out.println("Delete export product failed");
+            try{
+                Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.getQuantity() + controller.editexportproduct.Controller.quantityAfterEdit;
+                Product prod = new Product(null, exportProductSelected.getProductName(), exportProductSelected.getCategory(), quantityProductExport, exportProductSelected.getUnitPrice());
+                ProductAccessObject pao = new ProductAccessObject();
+                if(epao.deleteProduct(exportProductSelected) && pao.updateQuantityProduct(prod)){
+                    System.out.println("Delete export product success");
+                    Parent root = FXMLLoader.load(getClass().getResource("../exportproduct/exportproduct.fxml"));
+                    Main.mainStage.setTitle("Export Products");
+                    Main.mainStage.setScene(new Scene(root, 750, 500));
+                    Main.mainStage.show();
+                }else{
+                    System.out.println("Delete export product failed");
+                }
+            }catch (Exception e){
+                System.out.println("Error get quantity export product");
             }
+
+
         }
     }
     public void editExportProduct() throws Exception{

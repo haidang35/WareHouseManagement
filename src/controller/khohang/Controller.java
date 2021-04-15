@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.ProductAccessObject;
@@ -39,6 +40,7 @@ public class Controller implements Initializable {
         }catch (Exception e){
             System.out.println("Connect to database failed");
         }
+
 
     }
     public void backToHome() throws Exception{
