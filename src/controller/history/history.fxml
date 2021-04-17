@@ -34,20 +34,25 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button onAction="#filterExport" layoutX="355.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Export">
+      <Button layoutX="307.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterExport" prefHeight="37.0" prefWidth="71.0" text="Export">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button onAction="#filterImport"  layoutX="271.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="71.0" text="Import">
+      <Button layoutX="229.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterImport" prefHeight="37.0" prefWidth="71.0" text="Import">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Text layoutX="224.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter: " wrappingWidth="71.0">
+      <Text layoutX="178.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter: " wrappingWidth="71.0">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
+      <Button layoutX="385.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterAll" prefHeight="37.0" prefWidth="53.0" text="All">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

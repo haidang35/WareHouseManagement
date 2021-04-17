@@ -132,4 +132,21 @@ public class Controller implements Initializable {
 
         }
     }
+    public void filterAll(){
+        idView.setCellValueFactory(new PropertyValueFactory<>("id"));
+        statusView.setCellValueFactory(new PropertyValueFactory<>("status"));
+        productView.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        categoryView.setCellValueFactory(new PropertyValueFactory<>("category"));
+        quantityView.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        staffView.setCellValueFactory(new PropertyValueFactory<>("staff"));
+        phoneNumberView.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        dateView.setCellValueFactory(new PropertyValueFactory<>("date"));
+        try{
+            HistoryAccessObject hao = new HistoryAccessObject();
+            historyTable.setItems(hao.getList());
+            System.out.println("Connected database");
+        }catch (Exception e){
+            System.out.println("Connect to database failed");
+        }
+    }
 }

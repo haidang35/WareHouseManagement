@@ -52,7 +52,7 @@ public class Controller implements Initializable {
         String nameStaff = staffTxt.getText();
         String phoneNumber = phoneNumberTxt.getText();
         Date dateNow = java.sql.Date.valueOf(dateTxt.getText());
-        if( quantity <= controller.exportproduct.Controller.exportProductSelected.getQuantity() && quantity >=0 ){
+        if( quantity <= controller.exportproduct.Controller.exportProductSelected.getQuantity() && quantity >=0 && unitPrice > 0){
             quantityAfterEdit = controller.exportproduct.Controller.exportProductSelected.getQuantity() - quantity ;
             Integer quantityProductAfterEdit = quantityAfterEdit + controller.addexportproduct.Controller.quantityAfterExport;
             Product prod = new Product(null, controller.exportproduct.Controller.exportProductSelected.getProductName(), controller.exportproduct.Controller.exportProductSelected.getCategory(), quantityProductAfterEdit, controller.exportproduct.Controller.exportProductSelected.getUnitPrice());

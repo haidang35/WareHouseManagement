@@ -29,23 +29,23 @@ public class Controller {
        String phoneNumber = phoneNumberTxt.getText();
        LocalDate ld = LocalDate.now();
        Date dateLocal = java.sql.Date.valueOf(ld);
-
-       ImportProduct ip = new ImportProduct(null, nameProduct, category, quantity, unitPrice, staffName, phoneNumber, dateLocal);
-       System.out.println("Time: " + dateLocal);
-       try {
-           ImportProductAccessObject ipao = new ImportProductAccessObject();
-           if(ipao.addProduct(ip)){
-               System.out.println("Add new product success");
-           }else{
-               System.out.println("Add new product failed !!!!");
+       if(quantity > 0 && unitPrice > 0){
+           ImportProduct ip = new ImportProduct(null, nameProduct, category, quantity, unitPrice, staffName, phoneNumber, dateLocal);
+           try {
+               ImportProductAccessObject ipao = new ImportProductAccessObject();
+               if(ipao.addProduct(ip)){
+                   System.out.println("Add new product success");
+               }else{
+                   System.out.println("Add new product failed !!!!");
+               }
+           }catch (Exception e){
+               System.out.println("Add new product failed");
            }
-       }catch (Exception e){
-           System.out.println("Add new product failed");
+           Parent root = FXMLLoader.load(getClass().getResource("../importproduct/importproduct.fxml"));
+           Main.mainStage.setTitle("Import Products");
+           Main.mainStage.setScene(new Scene(root, 750, 500));
+           Main.mainStage.show();
        }
-       Parent root = FXMLLoader.load(getClass().getResource("../importproduct/importproduct.fxml"));
-       Main.mainStage.setTitle("Import Products");
-       Main.mainStage.setScene(new Scene(root, 750, 500));
-       Main.mainStage.show();
 
    }
    public void backToStock() throws Exception{

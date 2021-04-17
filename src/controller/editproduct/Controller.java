@@ -32,17 +32,20 @@ public class Controller implements Initializable {
         String category = categoryTxt.getText();
         Integer quantity = Integer.parseInt(quantityTxt.getText());
         Integer unitPrice = Integer.parseInt(unitPriceTxt.getText());
-        Product prodEdit = new Product(id, nameProduct, category, quantity, unitPrice);
-        ProductAccessObject pao = new ProductAccessObject();
-        if(pao.setProduct(prodEdit)){
-            Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
-            Main.mainStage.setTitle("Kho hàng");
-            Main.mainStage.setScene(new Scene(root,750, 500));
-            Main.mainStage.show();
-            System.out.println("Edit product success");
-        }else{
-            System.out.println("Edit product failed");
+        if(quantity > 0 && unitPrice > 0){
+            Product prodEdit = new Product(id, nameProduct, category, quantity, unitPrice);
+            ProductAccessObject pao = new ProductAccessObject();
+            if(pao.setProduct(prodEdit)){
+                Parent root= FXMLLoader.load(getClass().getResource("../khohang/khohang.fxml"));
+                Main.mainStage.setTitle("Kho hàng");
+                Main.mainStage.setScene(new Scene(root,750, 500));
+                Main.mainStage.show();
+                System.out.println("Edit product success");
+            }else{
+                System.out.println("Edit product failed");
+            }
         }
+
     }
 
     public void backToStock() throws Exception{
