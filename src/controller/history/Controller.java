@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.HistoryAccessObject;
 import model.entity.History;
 
@@ -25,6 +26,7 @@ public class Controller implements Initializable {
     public TableColumn<History, String> staffView;
     public TableColumn<History, String> phoneNumberView;
     public TableColumn<History, Date> dateView;
+    Stage exportFilterStage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -95,10 +97,15 @@ public class Controller implements Initializable {
         }catch (Exception e){
             System.out.println("Get list export failed");
         }
-        Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
-        Main.mainStage.setTitle("History");
-        Main.mainStage.setScene(new Scene(root, 750, 500));
-        Main.mainStage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
+            exportFilterStage.setTitle("History export filter");
+            exportFilterStage.setScene(new Scene(root, 750, 500));
+            exportFilterStage.show();
+        }catch (Exception e){
+
+        }
+
     }
     public void filterImport() throws Exception{
         idView.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -116,9 +123,13 @@ public class Controller implements Initializable {
         }catch (Exception e){
             System.out.println("Get list import failed");
         }
-        Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
-        Main.mainStage.setTitle("History");
-        Main.mainStage.setScene(new Scene(root, 750, 500));
-        Main.mainStage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
+            exportFilterStage.setTitle("History export filter");
+            exportFilterStage.setScene(new Scene(root, 750, 500));
+            exportFilterStage.show();
+        }catch (Exception e){
+
+        }
     }
 }

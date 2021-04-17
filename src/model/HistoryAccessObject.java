@@ -99,6 +99,9 @@ public class HistoryAccessObject implements DataAccessObject<History>{
         }catch (Exception e){
             System.out.println("Not filter list export");
         }
+//        for(History lis: listExport){
+//            System.out.println(lis.getStatus() + lis.getProductName());
+//        }
         return listExport;
     }
     public ObservableList<History> getListImport() {
