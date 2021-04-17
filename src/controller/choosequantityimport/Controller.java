@@ -6,12 +6,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import model.HistoryAccessObject;
 import model.ImportProductAccessObject;
 import model.ProductAccessObject;
+import model.entity.History;
 import model.entity.ImportProduct;
 import model.entity.Product;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -74,6 +78,22 @@ public class Controller implements Initializable {
                             quantityAfterChooseImport, controller.importproduct.Controller.importProductSelected.getUnitPrice(), controller.importproduct.Controller.importProductSelected.getStaff(),
                             controller.importproduct.Controller.importProductSelected.getPhoneNumber(), controller.importproduct.Controller.importProductSelected.getDate());
                     ipao.updateQuantityProduct(iprod);
+
+                    LocalDate ld = LocalDate.now();
+                    Date dateImport = java.sql.Date.valueOf(ld);
+                    String productImport = controller.importproduct.Controller.importProductSelected.getProductName();
+                    String category = controller.importproduct.Controller.importProductSelected.getCategory();
+                    Integer quantity = quantityProduct;
+                    String staffImport = controller.importproduct.Controller.importProductSelected.getStaff();
+                    String phoneNumber = controller.importproduct.Controller.importProductSelected.getPhoneNumber();
+                    History his = new History(null,"Import", productImport, category, quantity, staffImport, phoneNumber, dateImport);
+                    HistoryAccessObject hao = new HistoryAccessObject();
+                    if(hao.addProduct(his)){
+                        System.out.println("Add import product to history success");
+                    }else{
+                        System.out.println("Add import product to history failed");
+                    }
+
                 }
                 else if(quantityProduct == controller.importproduct.Controller.importProductSelected.getQuantity()){
                     ipao.deleteProduct(controller.importproduct.Controller.importProductSelected);
