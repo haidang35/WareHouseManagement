@@ -3,8 +3,6 @@ package model;
 import database.Connector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
-import model.entity.ExportProduct;
 import model.entity.History;
 
 import java.sql.Date;
@@ -97,6 +95,7 @@ public class HistoryAccessObject implements DataAccessObject<History>{
                 History his = new History(id, status, productName, category, quantity, staff, phoneNumber, date);
                 listExport.add(his);
             }
+            System.out.println("Get list Export from database success");
         }catch (Exception e){
             System.out.println("Not filter list export");
         }

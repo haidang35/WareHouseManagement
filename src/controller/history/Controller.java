@@ -91,9 +91,9 @@ public class Controller implements Initializable {
         try{
             HistoryAccessObject hao = new HistoryAccessObject();
             historyTable.setItems(hao.getListExport());
-            System.out.println("Connected database");
+            System.out.println("Get list export success");
         }catch (Exception e){
-            System.out.println("Connect to database failed");
+            System.out.println("Get list export failed");
         }
         Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
         Main.mainStage.setTitle("History");
@@ -112,9 +112,9 @@ public class Controller implements Initializable {
         try{
             HistoryAccessObject hao = new HistoryAccessObject();
             historyTable.setItems(hao.getListImport());
-            System.out.println("Connected database");
+            System.out.println("Get list import success");
         }catch (Exception e){
-            System.out.println("Connect to database failed");
+            System.out.println("Get list import failed");
         }
         Parent root = FXMLLoader.load(getClass().getResource("../history/history.fxml"));
         Main.mainStage.setTitle("History");
