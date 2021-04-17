@@ -108,8 +108,8 @@ public class Controller implements Initializable {
         if(exportProductTable.getSelectionModel().getSelectedItems().size() > 0){
             exportProductSelected = exportProductTable.getSelectionModel().getSelectedItem();
             ExportProductAccessObject epao = new ExportProductAccessObject();
-            try{
-                Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.getQuantity() + controller.editexportproduct.Controller.quantityAfterEdit;
+//            try{
+                Integer quantityProductExport = controller.addexportproduct.Controller.quantityAfterExport + exportProductSelected.getQuantity();
                 Product prod = new Product(null, exportProductSelected.getProductName(), exportProductSelected.getCategory(), quantityProductExport, exportProductSelected.getUnitPrice());
                 ProductAccessObject pao = new ProductAccessObject();
                 if(epao.deleteProduct(exportProductSelected) && pao.updateQuantityProduct(prod)){
@@ -121,9 +121,9 @@ public class Controller implements Initializable {
                 }else{
                     System.out.println("Delete export product failed");
                 }
-            }catch (Exception e){
-                System.out.println("Error get quantity export product");
-            }
+//            }catch (Exception e){
+//                System.out.println("Error get quantity export product");
+//            }
 
 
         }
